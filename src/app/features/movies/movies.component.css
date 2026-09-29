@@ -1,0 +1,15 @@
+.page { padding: 56px 6%; }
+.heading { max-width: 760px; margin-bottom: 28px; }
+.eyebrow { color: #f87171; font-weight: 800; letter-spacing: .18em; font-size: 12px; }
+h1 { font-size: 48px; margin: 8px 0; }
+.heading p:not(.eyebrow) { color: #a1a1aa; }
+.filters { display: flex; gap: 12px; margin-bottom: 30px; }
+input, select { background: #18181b; color: white; border: 1px solid #3f3f46; border-radius: 10px; padding: 12px; }
+input { width: 280px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.card { background: #18181b; border: 1px solid #27272a; border-radius: 16px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.card > div { padding: 18px; }
+.card small, .card p { color: #a1a1aa; }
+.card p { line-height: 1.5; min-height: 70px; }
+.button { display: inline-block; padding: 10px 14px; border-radius: 9px; background: #ef4444; color: white; font-weight: 800; }

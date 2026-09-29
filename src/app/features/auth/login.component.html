@@ -1,0 +1,26 @@
+<section class="auth">
+  <div class="panel">
+    <p class="eyebrow">CINE UTN</p>
+    <h1>{{ registerMode() ? "Crear cuenta" : "Ingresar" }}</h1>
+
+    <form (ngSubmit)="submit()">
+      <label>Email</label>
+      <input type="email" name="email" [(ngModel)]="email" required>
+
+      <label>Password</label>
+      <input type="password" name="password" [(ngModel)]="password" required minlength="6">
+
+      @if (error()) {
+        <p class="error">{{ error() }}</p>
+      }
+
+      <button class="button" type="submit">
+        {{ registerMode() ? "Registrarme" : "Ingresar" }}
+      </button>
+    </form>
+
+    <button class="link" (click)="registerMode.update(value => !value)">
+      {{ registerMode() ? "Ya tengo cuenta" : "Crear una cuenta" }}
+    </button>
+  </div>
+</section>

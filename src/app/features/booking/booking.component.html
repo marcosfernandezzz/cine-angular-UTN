@@ -1,0 +1,47 @@
+<section class="page">
+  <div class="heading">
+    <p class="eyebrow">COMPRA</p>
+    <h1>Elegir butacas</h1>
+    <p>Selecciona tus lugares. Las ultimas tres filas son VIP.</p>
+  </div>
+
+  <div class="screen">PANTALLA</div>
+
+  <div class="legend">
+    <span><i class="free"></i> Libre</span>
+    <span><i class="selected"></i> Seleccionada</span>
+    <span><i class="vip"></i> VIP</span>
+    <span><i class="sold"></i> Vendida</span>
+  </div>
+
+  <div class="seats">
+    @for (seat of seats; track seat.id) {
+      <button
+        class="seat"
+        [class.selected]="isSelected(seat)"
+        [class.vip]="seat.vip"
+        [class.sold]="seat.status === 'sold'"
+        [disabled]="seat.status === 'sold'"
+        (click)="select(seat)"
+      >
+        {{ seat.row }}{{ seat.number }}
+      </button>
+    } @empty {
+      <p>No hay butacas cargadas. Ejecuta el SQL incluido en el proyecto.</p>
+    }
+  </div>
+
+  <aside class="summary">
+    <div>
+      <strong>{{ bookingService.selectedSeats().length }}</strong>
+      <span>butacas</span>
+    </div>
+    <div>
+      <strong>${{ total() | number }}</strong>
+      <span>total</span>
+    </div>
+    <button class="button" [disabled]="!bookingService.selectedSeats().length" (click)="confirm()">
+      Continuar
+    </button>
+  </aside>
+</section>

@@ -1,0 +1,19 @@
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  border-bottom: 1px solid #27272a;
+  background: #09090b;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand { font-weight: 900; letter-spacing: .08em; color: #fff; }
+nav { display: flex; gap: 18px; align-items: center; }
+nav a { color: #a1a1aa; }
+nav a.active, nav a:hover { color: #fff; }
+.ghost { background: transparent; border: 1px solid #3f3f46; color: #fff; }
+main { min-height: calc(100vh - 120px); }
+footer { padding: 24px 6%; display: flex; justify-content: space-between; color: #71717a; border-top: 1px solid #27272a; }

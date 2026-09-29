@@ -1,0 +1,9 @@
+.detail { padding: 70px 8%; display: grid; grid-template-columns: minmax(260px, 380px) 1fr; gap: 56px; align-items: center; }
+.detail img { width: 100%; border-radius: 18px; }
+.detail h1 { font-size: 54px; margin: 8px 0; }
+.eyebrow { color: #f87171; font-weight: 800; letter-spacing: .18em; }
+.meta, .synopsis { color: #a1a1aa; }
+.synopsis { line-height: 1.7; max-width: 700px; }
+.button { display: inline-block; margin-top: 18px; padding: 12px 18px; border-radius: 10px; background: #ef4444; color: white; font-weight: 800; }
+.empty { padding: 80px 6%; }
+@media (max-width: 760px) { .detail { grid-template-columns: 1fr; } .detail h1 { font-size: 40px; } }

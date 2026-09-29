@@ -1,0 +1,16 @@
+@if (movie(); as item) {
+  <section class="detail">
+    <img [src]="item.imageUrl" [alt]="item.name">
+    <div>
+      <p class="eyebrow">PELICULA</p>
+      <h1>{{ item.name }}</h1>
+      <p class="meta">{{ item.ageRating }} · {{ item.durationMinutes }} min · {{ item.genres.join(" · ") }}</p>
+      <p class="synopsis">{{ item.synopsis }}</p>
+      <p><strong>Formatos:</strong> {{ item.formats.join(", ") }}</p>
+      <p><strong>Idioma:</strong> {{ item.languageModes.join(", ") }}</p>
+      <a class="button" routerLink="/peliculas">Ver funciones</a>
+    </div>
+  </section>
+} @else {
+  <p class="empty">Pelicula no encontrada.</p>
+}

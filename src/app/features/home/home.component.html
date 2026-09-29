@@ -1,0 +1,39 @@
+<section class="hero">
+  <div>
+    <p class="eyebrow">CINE UTN</p>
+    <h1>Tu proxima pelicula empieza aca.</h1>
+    <p>Cartelera, funciones, butacas, Candy Bar y compras en un solo lugar.</p>
+    <a class="button" routerLink="/peliculas">Ver cartelera</a>
+  </div>
+</section>
+
+<section class="content">
+  <div class="section-title">
+    <div>
+      <p class="eyebrow">CARTELERA</p>
+      <h2>Peliculas</h2>
+    </div>
+    <input
+      type="search"
+      placeholder="Buscar pelicula..."
+      [value]="search()"
+      (input)="search.set($any($event.target).value)"
+    />
+  </div>
+
+  <div class="grid">
+    @for (movie of filteredMovies(); track movie.id) {
+      <article class="movie-card">
+        <img [src]="movie.imageUrl" [alt]="movie.name">
+        <div class="movie-info">
+          <span>{{ movie.ageRating }}</span>
+          <h3>{{ movie.name }}</h3>
+          <p>{{ movie.durationMinutes }} min · {{ movie.genres.join(" · ") }}</p>
+          <a class="button small" [routerLink]="['/peliculas', movie.id]">Ver pelicula</a>
+        </div>
+      </article>
+    } @empty {
+      <p>No hay peliculas para mostrar.</p>
+    }
+  </div>
+</section>

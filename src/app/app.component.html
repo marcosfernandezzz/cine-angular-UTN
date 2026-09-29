@@ -1,0 +1,23 @@
+<header class="topbar">
+  <a class="brand" routerLink="/">CINE UTN</a>
+
+  <nav>
+    <a routerLink="/peliculas" routerLinkActive="active">Peliculas</a>
+    @if (auth.user()) {
+      <a routerLink="/perfil" routerLinkActive="active">Mi perfil</a>
+      <a routerLink="/admin" routerLinkActive="active">Admin</a>
+      <button class="ghost" (click)="auth.logout()">Salir</button>
+    } @else {
+      <a routerLink="/login" routerLinkActive="active">Ingresar</a>
+    }
+  </nav>
+</header>
+
+<main>
+  <router-outlet />
+</main>
+
+<footer>
+  <span>Cine UTN</span>
+  <span>Programacion IV</span>
+</footer>
